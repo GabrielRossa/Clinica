@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica - Pacientes</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/paciente.css">
+
+</head>
+<body>
+    <main>
+        <h1>Pacientes</h1>
+        <h2>Área de acesso de dados.</h2>
+        
+        <button id="buttonLista" onclick="listarTudo()">Listar Pacientes</button>
+        <button id="buttonCadastro">Cadastrar Paciente</button>
+        
+        <!-- Modal Listagem Todos -->
+        <div class="modal" id="modalTodosObjetos">
+            <h2>Lista de Médicos</h2>
+            <span id="closeTodosObjetos">&times;</span>
+        </div>
+
+        <!-- Modal Cadastro -->
+        <div class="modal" id="modalCadastro">
+            <form action="" id="form">
+                <h2>Cadastro Paciente</h2>
+                <span id="closeCadastro">&times;</span>
+                <div>
+                    <input type="num" placeholder="Digite seu CPF" class="input required" oninput="CPFValidate()">
+                    <span class="span-required">CPF inválido.</span>  
+                </div>
+    
+                <div>
+                    <input type="text" placeholder="Digite seu nome completo" class="input required" oninput="nomeValidate()">
+                    <span class="span-required">Nome deve ter no mínimo 3 caracteres.</span>  
+                </div>
+                
+                <div>
+                    <input type="num" placeholder="Digite sua idade" class="input required" oninput="idadeValidate()">
+                    <span class="span-required">Idade deve ser preenchida.</span>  
+                </div>
+    
+                <p>Sexo:</p>
+                <div class="box-select input required">
+                    <div>
+                        <input type="radio" id="masculino" value="m" name="sexo">
+                        <label for="m">Masculino</label>
+                    </div>
+    
+                    <div>
+                        <input type="radio" id="feminino" value="f" name="sexo">
+                        <label for="f">Feminino</label>
+                    </div>
+    
+                    <div>
+                        <input type="radio" id="outro" value="o" name="sexo">
+                        <label for="o">Outro</label>
+                    </div>
+                </div>
+                <span class="span-required">Selecione uma opção.</span>  
+                
+
+                <div>
+                    <input type="email" placeholder="Digite seu melhor e-mail" class="input required" oninput="emailValidate()">
+                    <span class="span-required">Digite um e-mail válido.</span>
+                </div>
+    
+                <div>
+                    <input type="num" placeholder="Digite seu telefone" class="input required" oninput="telefoneValidate()">
+                    <span class="span-required">Telefone inválido</span>  
+                </div>
+    
+                <button type="submit" id="submitCadastro">Enviar</button>
+            </form>
+        </div>
+        
+    </main>
+
+    <script src="scripts/modals.js"></script>
+    <script src="scripts/validaPaciente.js"></script>
+
+</body>
+</html>

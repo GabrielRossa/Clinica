@@ -1,0 +1,56 @@
+*, html{
+    box-sizing: border-box;
+    
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    background-color: #181818;
+}
+
+button{
+    background-color: #FF8500;
+    color: #181818;
+
+    transition: .3s;
+}
+
+button:hover{
+    color: white;
+}
+
+#modalTodosObjetos{
+    width: 90vw;
+    height: 90vh;
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+
+    flex-wrap: wrap;
+}
+
+#modalTodosObjetos.active{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#modalTodosObjetos h2{
+    position: absolute;
+    top: 1rem;
+}
+
+.modal #closeTodosObjetos{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+.block-box{
+    width: 480px;
+    margin: 1rem;
+}

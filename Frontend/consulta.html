@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica - Consultas</title>
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/consulta.css">
+</head>
+<body>
+    <main>
+        <h1>Consultas</h1>
+        <h2>Área de acesso de dados.</h2>
+        
+        <button id="buttonLista" onclick="listarTudo()">Listar Consultas</button>
+        <button id="buttonCadastro">Cadastrar Consulta</button>
+        
+        <!-- Modal Listagem Todos -->
+        <div class="modal" id="modalTodosObjetos">
+            <h2>Lista de Médicos</h2>
+            <span id="closeTodosObjetos">&times;</span>
+        </div>
+
+        <!-- Modal Cadastro -->
+        <div class="modal" id="modalCadastro">
+            <form action="" id="form">
+                <h2>Cadastro Consultas</h2>
+                <span id="closeCadastro">&times;</span>
+                <div>
+                    <input type="text" placeholder="Digite o CRM do médico" class="input required" oninput="CRMValidate()">
+                    <span class="span-required">CRM inválido.</span>  
+                </div>
+    
+                <div>
+                    <input type="text" placeholder="Digite seu CPF" class="input required" oninput="CPFValidate()">
+                    <span class="span-required">CPF inválido.</span>  
+                </div>
+    
+                <div>
+                    <p>Informe a data e horário da consulta:</p>
+                    <input type="text" class="input required" placeholder="dd/mm/aaaa 00:00" oninput="dataValidate()">
+                    <span class="span-required">Verifique se as informações foram preenchidas corretamente.</span>  
+
+                </div>
+    
+                <div>
+                    <input type="text" placeholder="Informe o tipo de atendimento" class="input required" oninput="tipoValidate()">
+                    <span class="span-required">O tipo deve ter no mínimo 5 caracteres.</span>  
+                </div>
+    
+                <p>Status:</p>
+                <div class="box-select input required">
+                    <div>
+                        <input type="radio" id="agendada" value="Agendada" name="status">
+                        <label for="m">Agendada</label>
+                    </div>
+    
+                    <div>
+                        <input type="radio" id="adiada" value="Adiada" name="status">
+                        <label for="f">Adiada</label>
+                    </div>
+    
+                    <div>
+                        <input type="radio" id="cancelada" value="Cancelada" name="status">
+                        <label for="o">Cancelada</label>
+                    </div>
+    
+                    <div>
+                        <input type="radio" id="concluída" value="Concluída" name="status">
+                        <label for="o">Concluída</label>
+                    </div>
+                </div>
+                <span class="span-required">Selecione uma opção.</span>  
+    
+                <button type="submit" id="submitCadastro">Enviar</button>
+            </form>
+        </div>
+        
+    </main>
+
+    <script src="scripts/modals.js"></script>
+    <script src="scripts/validaConsulta.js"></script>
+</body>
+</html>
